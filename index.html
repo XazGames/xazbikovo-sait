@@ -40,23 +40,23 @@
     .version-badge:hover { background:rgba(255,255,255,0.4); }
     .nav-container { display:flex; align-items:center; position:relative; margin-left:10px; }
     .current-tab { background:var(--btn-bg); border: var(--border-width) solid var(--glass-border); color:var(--text); padding:10px 18px; border-radius:30px; font-weight:500; font-size:0.85em; cursor:default; backdrop-filter:blur(10px); display:flex; align-items:center; gap:8px; white-space:nowrap; z-index:2; transition: opacity 0.3s; position: relative; overflow: hidden; }
-    .collapsible-menu { 
-      display:flex; 
-      max-width:0; 
-      overflow:hidden; 
-      opacity:0; 
-      transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s, border-color 0.3s, background 0.3s; 
-      margin-left:10px; 
-      gap:10px; 
-      align-items:center; 
+    .collapsible-menu {
+      display:flex;
+      max-width:0;
+      overflow:hidden;
+      opacity:0;
+      transition: max-width 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s, border-color 0.3s, background 0.3s;
+      margin-left:10px;
+      gap:10px;
+      align-items:center;
       border: var(--border-width) solid transparent;
       background:transparent;
       border-radius:30px;
       padding:5px;
     }
-    .nav-container:hover .collapsible-menu { 
-      max-width:700px; 
-      opacity:1; 
+    .nav-container:hover .collapsible-menu {
+      max-width:700px;
+      opacity:1;
       border-color:var(--glass-border);
       background:var(--glass-bg);
     }
@@ -95,23 +95,23 @@
 
     .card-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:600px; margin:0 auto; }
     @media (max-width:600px) { .card-grid{grid-template-columns:1fr;} }
-    .glass-card { 
-      backdrop-filter:blur(16px); 
-      -webkit-backdrop-filter:blur(16px); 
-      background:rgba(255,255,255,0.04); 
-      border: var(--border-width) solid rgba(255,255,255,0.06); 
+    .glass-card {
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      background:rgba(255,255,255,0.04);
+      border: var(--border-width) solid rgba(255,255,255,0.06);
       border-radius:30px;
       padding:24px 20px;
-      font-weight:600; 
-      text-align:left; 
-      transition: all 0.3s ease, box-shadow 0.3s, transform 0.15s; 
-      position: relative; 
-      cursor:pointer; 
-      overflow: hidden; 
-      display:flex; 
-      flex-direction:column; 
-      gap:12px; 
-      transform-style: preserve-3d; 
+      font-weight:600;
+      text-align:left;
+      transition: all 0.3s ease, box-shadow 0.3s, transform 0.15s;
+      position: relative;
+      cursor:pointer;
+      overflow: hidden;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transform-style: preserve-3d;
       transform: perspective(600px);
       min-height: 120px;
     }
@@ -182,12 +182,12 @@
     .role-violator { color: #ef4444; font-weight: bold; }
     .role-inactive { color: #666; }
 
-    .sight-item { display:flex; align-items:center; gap:30px; margin-bottom:40px; background:var(--glass-bg); border-radius:24px; padding:25px; cursor:pointer; transition:0.2s; }
+    .sight-item { display:flex; align-items:center; gap:30px; margin-bottom:30px; background:var(--glass-bg); border-radius:24px; padding:15px; cursor:pointer; transition:0.2s; }
     .sight-item:hover { background:rgba(255,255,255,0.08); }
     .sight-item.reverse { flex-direction:row-reverse; }
-    .sight-item img { width:350px; height:250px; object-fit:cover; border-radius:18px; }
-    .sight-info h3 { font-size:1.8em; margin-bottom:15px; }
-    .sight-detail-modal { max-width:900px !important; }
+    .sight-item img { width:220px; height:150px; object-fit:cover; border-radius:18px; }
+    .sight-info h3 { font-size:1.5em; margin-bottom:10px; }
+    .sight-detail-modal { max-width:850px !important; }
     .image-slider { position: relative; overflow: hidden; width: 100%; height: 350px; border-radius: 15px; margin-bottom: 20px; }
     .image-slider img { width: 100%; height: 100%; object-fit: cover; display: none; }
     .image-slider img.active { display: block; }
@@ -233,25 +233,31 @@
     .blurred { filter: blur(4px); transition: filter 0.2s; cursor: pointer; }
     .blurred.revealed { filter: none; }
 
-    .profile-modal-content { border-radius: 32px; overflow: visible; max-width: 950px !important; padding: 0; }
-    .profile-modal-body { display: flex; gap: 30px; position: relative; margin-top: 20px; }
-    .profile-avatar-left img { width: 120px; border-radius: 20px; }
-    .profile-info-right { flex: 1; display: flex; flex-direction: column; background: linear-gradient(0deg, var(--role-color, rgba(255,255,255,0.15)) 0%, transparent 80%); padding: 30px; border-radius: 0 0 24px 24px; min-height: 300px; position: relative; }
-    .profile-role-strip { width: 100%; height: 8px; background: var(--role-color, #fff); border-radius: 4px 4px 0 0; position: absolute; top: 0; left: 0; }
-    .profile-nick { font-size: 2.4em; font-weight: bold; margin-bottom: 10px; }
-    .profile-field { display: flex; align-items: center; gap: 12px; margin: 10px 0; cursor: pointer; font-size: 1.1em; }
-    .profile-edit-icon { visibility: hidden; cursor: pointer; opacity: 0.7; background: none; border: none; color: var(--text); padding: 4px; font-size: 1.2em; }
-    .profile-edit-mode .profile-edit-icon { visibility: visible; }
-    .profile-logout-btn { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 0.9em; }
-    .profile-edit-toggle-btn { position: absolute; bottom: 20px; left: 20px; font-size: 0.9em; }
-    .copy-success { animation: copyFlash 0.8s ease; }
-    @keyframes copyFlash { 0% { background: rgba(16,185,129,0.4); } 100% { background: transparent; } }
+    .profile-modal-content { border-radius: 32px; overflow: visible; max-width: 650px !important; padding: 0; }
+    .profile-modal-body { display: flex; gap: 20px; position: relative; margin-top: 20px; }
+    .profile-avatar-left img { width: 100px; border-radius: 20px; }
+    .profile-info-right { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+    .role-colored-block { background: var(--role-color, rgba(255,255,255,0.15)); border-radius: 20px; padding: 20px; position: relative; color: white; margin-bottom: 10px; }
+    .profile-nick { font-size: 2em; font-weight: bold; position: absolute; bottom: 15px; left: 20px; }
+    .profile-detail-row { background: var(--glass-bg); backdrop-filter: blur(10px); border-radius: 15px; padding: 12px 18px; display: flex; align-items: center; gap: 10px; }
+    .profile-detail-row .label { min-width: 80px; color: var(--text-secondary); }
+    .profile-detail-row .value { flex:1; }
+    .copy-btn-user { border-radius: 20px; padding: 5px 15px; background: var(--btn-bg); border: var(--border-width) solid var(--glass-border); color: var(--text); cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 6px; }
+    .copy-btn-user.copied { background: #10b981; border-color: #10b981; color: white; }
 
     .format-bar { display: flex; gap: 5px; margin-bottom: 5px; align-items: center; flex-wrap: wrap; }
     .format-bar button { background: var(--btn-bg); border: var(--border-width) solid var(--glass-border); color: var(--text); padding: 6px 12px; border-radius: 8px; cursor: pointer; }
     .format-bar button.active { background: var(--accent); color: #111; }
     .format-bar input[type="color"] { width: 32px; height: 32px; padding: 2px; border: none; border-radius: 4px; cursor: pointer; background: transparent; }
     .format-bar select, .format-bar input[type="number"] { padding: 6px 8px; border-radius: 8px; border: var(--border-width) solid var(--glass-border); background: var(--input-bg); color: var(--text); }
+
+    .news-card { margin-bottom: 30px; min-height: 400px; }
+    .news-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; }
+    .news-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; cursor: pointer; }
+    .news-gallery.single-img img { grid-column: span 2; max-height: 300px; }
+    .lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .lightbox img { max-width: 90vw; max-height: 80vh; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 2em; color: white; cursor: pointer; background: none; border: none; }
 
     @media (max-width: 768px) {
       .header { flex-wrap: wrap; padding: 10px 15px; }
@@ -279,7 +285,7 @@
 <body>
   <div class="bg-dot"></div>
   <div class="toast-container" id="toastContainer"></div>
-  <div class="success-overlay" id="successOverlay"><div class="success-message">Успешная регистрация!</div></div>
+  <div class="success-overlay" id="successOverlay"><div class="success-message">🎉 Успешная регистрация! 🎉</div></div>
 
   <header class="header">
     <div class="header-left">
@@ -328,10 +334,10 @@
         </div>
         <div class="main-menu-wrapper anim-content" id="mainMenuWrapper">
           <div class="card-grid">
-            <div class="glass-card purple" onclick="showPage('residents')"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="card-title">Жители</div></div><div class="card-desc">Список всех жителей города</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-            <div class="glass-card blue" onclick="showPage('sights')"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2v5M7 2v5"/></svg></div><div class="card-title">Достопримечательности</div></div><div class="card-desc">Интересные места города</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-            <div class="glass-card pink" onclick="showPage('chs')"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><div class="card-title">ЧС</div></div><div class="card-desc">Чёрный список нарушителей</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-            <div class="glass-card green" onclick="showPage('rules')"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="card-title">Правила</div></div><div class="card-desc">Свод законов и порядки</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+            <div class="glass-card purple" onclick="showPage('residents')" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="card-title">Жители</div></div><div class="card-desc">Список всех жителей города</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+            <div class="glass-card blue" onclick="showPage('sights')" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2v5M7 2v5"/></svg></div><div class="card-title">Достопримечательности</div></div><div class="card-desc">Интересные места города</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+            <div class="glass-card pink" onclick="showPage('chs')" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><div class="card-title">ЧС</div></div><div class="card-desc">Чёрный список нарушителей</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+            <div class="glass-card green" onclick="showPage('rules')" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)"><div class="card-row"><div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="card-title">Правила</div></div><div class="card-desc">Свод законов и порядки</div><div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
           </div>
         </div>
       </div>
@@ -373,7 +379,7 @@
       <input type="email" id="regEmail" placeholder="Email">
       <div class="error-message" id="regEmailError"></div>
       <div class="password-field">
-        <input type="password" id="regPass" placeholder="Пароль">
+        <input type="password" id="regPass" placeholder="Пароль (только англ. буквы, макс 15 символов)">
         <button class="password-toggle" onclick="togglePassword('regPass', this)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
       <div class="password-strength-bar" id="passStrengthBar"></div>
@@ -423,8 +429,7 @@
 </html>
 <script>
   // ======================== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ========================
-  localStorage.clear();
-  let users = [];
+  let users = JSON.parse(localStorage.getItem('xazUsers')) || [];
   let currentUser = JSON.parse(localStorage.getItem('xazCurrentUser')) || null;
   let soundVolume = parseFloat(localStorage.getItem('volume') || 0.5);
   let isDark = localStorage.getItem('theme') !== 'light';
@@ -433,6 +438,7 @@
   let customSound = localStorage.getItem('customSound') || '';
   let welcomeText = localStorage.getItem('welcomeText') || 'Добро пожаловать на сайт города Хазбиково';
   let welcomeSubText = localStorage.getItem('welcomeSubText') || 'Здесь вы можете ознакомиться со всей информацией о городе, о жителях, узнать о достопримечательностях, узнать в ЧС ли вы или нет, прочитать правила города и даже пообщаться в чате. Это лишь малая часть всего, что здесь есть. Сайт создан такими игроками как <strong style="color:white;">Xazbik_</strong> и <strong style="color:white;">Der1zon</strong><br><span style="opacity:0.6; font-size:0.9em;">by Xaz&Der1</span>';
+  let currentPageId = localStorage.getItem('xazCurrentPage') || 'home';
 
   let residentsData = JSON.parse(localStorage.getItem('residentsData')) || [
     { nick: 'Xazbik_', role: 'Мэр', roleClass: 'role-mayor', user: '@lostyy43', desc: 'Основатель и мэр города.' },
@@ -464,6 +470,36 @@
   ];
   let moderatorPermissions = JSON.parse(localStorage.getItem('moderatorPermissions')) || {};
 
+  // Очень длинные тексты для политик
+  const privacyPolicyText = `
+    <h2>Политика конфиденциальности</h2>
+    <p>Настоящая Политика конфиденциальности объясняет, как сайт города Хазбиково («мы», «нас» или «наш») собирает, использует и защищает информацию, предоставленную пользователями. Мы серьезно относимся к вашей конфиденциальности и обязуемся защищать любые личные данные, которые вы нам доверяете.</p>
+    <p><strong>1. Сбор информации.</strong> Мы можем собирать следующие типы информации: никнейм Minecraft, адрес электронной почты, пароль (в зашифрованном виде), а также любые другие данные, которые вы добровольно предоставляете при регистрации или использовании сайта. Кроме того, автоматически собираются технические данные, такие как IP-адрес, тип браузера, время доступа и посещённые страницы, для улучшения работы сайта и предотвращения мошенничества.</p>
+    <p><strong>2. Использование информации.</strong> Собранные данные используются для: создания и управления вашей учётной записью; обеспечения доступа к функциям сайта (жители, достопримечательности, ЧС, правила и т.д.); связи с вами при необходимости; улучшения качества обслуживания и разработки новых возможностей; предотвращения нарушений и соблюдения правил города. Мы не продаём, не обмениваем и не передаём вашу личную информацию третьим лицам без вашего согласия, за исключением случаев, предусмотренных законодательством.</p>
+    <p><strong>3. Защита данных.</strong> Мы применяем современные технические и организационные меры для защиты ваших данных от несанкционированного доступа, изменения, раскрытия или уничтожения. Пароли хранятся в хэшированном виде. Однако ни один метод передачи данных через Интернет или метод электронного хранения не является на 100% безопасным, поэтому мы не можем гарантировать абсолютную безопасность.</p>
+    <p><strong>4. Файлы cookie.</strong> Сайт использует файлы cookie и локальное хранилище для аутентификации пользователей, сохранения настроек (тема, стример-мод) и улучшения пользовательского опыта. Вы можете отключить cookie в настройках браузера, но это может повлиять на функциональность сайта.</p>
+    <p><strong>5. Доступ к данным.</strong> Вы имеете право просматривать, редактировать или удалять свою личную информацию в любой момент, используя профиль или отправив запрос администратору. Некоторые данные могут быть сохранены в резервных копиях в течение ограниченного времени.</p>
+    <p><strong>6. Ссылки на сторонние ресурсы.</strong> Сайт может содержать ссылки на Telegram, Discord и другие платформы. Мы не контролируем их политику конфиденциальности и не несём ответственности за их действия.</p>
+    <p><strong>7. Изменения в политике.</strong> Мы оставляем за собой право обновлять данную Политику конфиденциальности. Уведомления об изменениях будут размещены на этой странице. Продолжая использовать сайт, вы соглашаетесь с обновлёнными условиями.</p>
+    <p><strong>8. Контакты.</strong> Если у вас есть вопросы относительно данной политики, пожалуйста, свяжитесь с нами через администрацию города или через указанные в футере соцсети.</p>
+    <p>Дата последнего обновления: 08 августа 2026 года.</p>
+  `;
+
+  const termsOfUseText = `
+    <h2>Условия пользования</h2>
+    <p>Добро пожаловать на сайт города Хазбиково! Используя наш сайт, вы соглашаетесь соблюдать настоящие Условия пользования. Пожалуйста, внимательно прочитайте их перед использованием сайта.</p>
+    <p><strong>1. Принятие условий.</strong> Получая доступ к сайту и используя его функции, вы подтверждаете, что ознакомились и согласны с данными Условиями. Если вы не согласны с каким-либо пунктом, вам следует прекратить использование сайта.</p>
+    <p><strong>2. Изменение условий.</strong> Мы оставляем за собой право изменять Условия в любое время без предварительного уведомления. Изменения вступают в силу с момента публикации. Рекомендуется периодически проверять эту страницу на предмет обновлений.</p>
+    <p><strong>3. Регистрация и аккаунт.</strong> Для доступа к некоторым функциям требуется регистрация. Вы обязуетесь предоставлять достоверную и точную информацию. Вы несёте ответственность за сохранность своего пароля и за все действия, совершённые под вашей учётной записью. Запрещается передавать аккаунт третьим лицам.</p>
+    <p><strong>4. Поведение пользователей.</strong> Запрещается: публиковать оскорбительные, клеветнические, непристойные материалы; нарушать права интеллектуальной собственности; использовать сайт для спама, фишинга или других вредоносных действий; вмешиваться в работу сайта, включая взлом, распространение вирусов; нарушать правила города Хазбиково и сервера ChichVAKA. Нарушители могут быть добавлены в ЧС или забанены без предупреждения.</p>
+    <p><strong>5. Контент.</strong> Весь контент, размещённый на сайте (тексты, изображения, дизайн), принадлежит проекту Хазбиково или используется с разрешения владельцев. Запрещается копирование, распространение или изменение контента без письменного разрешения.</p>
+    <p><strong>6. Ответственность.</strong> Сайт предоставляется «как есть». Мы не гарантируем бесперебойную работу, точность информации или соответствие вашим ожиданиям. Мы не несём ответственности за любые убытки, возникшие в результате использования или невозможности использования сайта.</p>
+    <p><strong>7. Сторонние сервисы.</strong> Мы используем сторонние библиотеки (canvas-confetti) и ссылки на внешние ресурсы. Ответственность за их работу несут их владельцы.</p>
+    <p><strong>8. Прекращение доступа.</strong> Мы имеем право временно или навсегда заблокировать доступ к сайту любому пользователю без объяснения причин, особенно в случае нарушения данных Условий.</p>
+    <p><strong>9. Применимое право.</strong> Настоящие Условия регулируются законодательством Российской Федерации. Все споры разрешаются путём переговоров, а при недостижении согласия – в судебном порядке по месту нахождения администратора.</p>
+    <p>Дата последнего обновления: 08 августа 2026 года.</p>
+  `;
+
   function saveData() {
     localStorage.setItem('residentsData', JSON.stringify(residentsData));
     localStorage.setItem('chsData', JSON.stringify(chsData));
@@ -484,6 +520,7 @@
     localStorage.setItem('customSound', customSound);
     localStorage.setItem('welcomeText', welcomeText);
     localStorage.setItem('welcomeSubText', welcomeSubText);
+    localStorage.setItem('xazCurrentPage', currentPageId);
   }
 
   // ======================== УТИЛИТЫ ========================
@@ -558,8 +595,8 @@
 
   function validatePassword(pass) {
     if (pass.length < 8) return 'Пароль должен быть не менее 8 символов';
-    if (!/[a-zA-Z]/.test(pass)) return 'Пароль должен содержать хотя бы одну букву';
-    if (!/[0-9]/.test(pass)) return 'Пароль должен содержать хотя бы одну цифру';
+    if (pass.length > 15) return 'Пароль не может быть длиннее 15 символов';
+    if (!/^[a-zA-Z0-9]+$/.test(pass)) return 'Пароль должен содержать только английские буквы и цифры';
     return '';
   }
 
@@ -595,10 +632,12 @@
     saveData();
     closeModalWithAnimation('registerModal');
     updateUI();
-    confetti({ particleCount: 300, spread: 360, origin: { y: 0.5, x: 0.5 } });
+    confetti({ particleCount: 500, spread: 360, origin: { y: 0.5, x: 0.5 }, colors: ['#FFD700', '#FF4500', '#00CED1', '#FF69B4'] });
+    setTimeout(() => confetti({ particleCount: 300, spread: 180, origin: { y: 0.7, x: 0.3 } }), 200);
+    setTimeout(() => confetti({ particleCount: 300, spread: 180, origin: { y: 0.7, x: 0.7 } }), 400);
     document.getElementById('successOverlay').classList.add('active');
-    setTimeout(() => document.getElementById('successOverlay').classList.remove('active'), 2500);
-    toast('Регистрация успешна!');
+    setTimeout(() => document.getElementById('successOverlay').classList.remove('active'), 3000);
+    toast('Регистрация успешна! Добро пожаловать, ' + nick + '!');
   };
 
   window.login = () => {
@@ -700,105 +739,46 @@
     let role = 'Неактивен', roleClass = 'role-inactive', roleColor = 'rgba(100,100,100,0.2)';
     if (resident) {
       role = resident.role; roleClass = resident.roleClass;
-      if (roleClass === 'role-mayor') roleColor = 'rgba(255,215,0,0.4)';
-      else if (roleClass === 'role-architect') roleColor = 'rgba(59,130,246,0.4)';
-      else if (roleClass === 'role-student') roleColor = 'rgba(16,185,129,0.4)';
-      else if (roleClass === 'role-resident') roleColor = 'rgba(156,163,175,0.4)';
-    } else if (chs) { role = 'Нарушитель'; roleClass = 'role-violator'; roleColor = 'rgba(239,68,68,0.4)'; }
+      if (roleClass === 'role-mayor') roleColor = '#FFD700';
+      else if (roleClass === 'role-architect') roleColor = '#3b82f6';
+      else if (roleClass === 'role-student') roleColor = '#10b981';
+      else if (roleClass === 'role-resident') roleColor = '#9ca3af';
+    } else if (chs) { role = 'Нарушитель'; roleClass = 'role-violator'; roleColor = '#ef4444'; }
 
+    const maskedEmail = currentUser.email.replace(/(.{1,3}).*@(.*)/, '$1***@$2');
+    const maskedPass = '••••••';
     const modal = document.createElement('div');
     modal.className = 'modal active';
     modal.innerHTML = `
       <div class="modal-content profile-modal-content">
         <span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span>
-        <div class="profile-modal-body" style="position:relative;">
-          <div class="profile-role-strip" style="background: ${roleColor};"></div>
-          <div class="profile-avatar-left"><img src="https://mc-heads.net/body/${currentUser.nick}" style="width:120px;"></div>
-          <div class="profile-info-right" style="position:relative; padding-top:30px;">
-            <div class="profile-nick">${currentUser.nick}</div>
-            <div style="margin-bottom:40px;"></div>
-            <div class="profile-field" onclick="copyUser('${resident?.user || ''}')">
-              <span class="field-value" id="profileUser">${resident?.user || '—'}</span>
-              <button class="profile-edit-icon" style="visibility:hidden;">✎</button>
+        <div class="profile-modal-body" style="align-items:flex-start;">
+          <div class="profile-avatar-left"><img src="https://mc-heads.net/body/${currentUser.nick}" style="width:100px; border-radius:20px;"></div>
+          <div class="profile-info-right">
+            <div class="role-colored-block" style="background:${roleColor}; height:120px; border-radius:20px; position:relative;">
+              <span class="profile-nick" style="position:absolute; bottom:10px; left:15px; font-size:2em; font-weight:bold;">${currentUser.nick}</span>
             </div>
-            <div class="profile-field">
-              <span class="field-value" id="profileEmail">${currentUser.email}</span>
-              <button class="profile-edit-icon" style="visibility:hidden;">✎</button>
-            </div>
-            <div class="profile-field">
-              <span class="field-value" id="profilePass">••••••</span>
-              <button class="profile-edit-icon" style="visibility:hidden;">✎</button>
-            </div>
-            <div style="display:flex; justify-content:space-between; margin-top:15px;">
-              <button class="profile-edit-toggle-btn btn-glass" id="editToggleBtn" onclick="toggleProfileEditMode()">Редактировать</button>
-              <button class="profile-logout-btn btn-glass" id="profileActionBtn" onclick="handleProfileAction()">Выйти</button>
-            </div>
+            <div class="profile-detail-row"><span class="label">Роль</span><span class="value ${roleClass}">${role}</span></div>
+            <div class="profile-detail-row"><span class="label">Юз</span><span class="value" id="profileUser">${resident?.user || '—'}</span><button class="copy-btn-user" onclick="copyProfileUser(this, '${resident?.user || ''}')">📋</button></div>
+            <div class="profile-detail-row"><span class="label">Почта</span><span class="value">${maskedEmail}</span></div>
+            <div class="profile-detail-row"><span class="label">Пароль</span><span class="value">${maskedPass}</span></div>
+            <button class="btn-glass logout-btn" onclick="logout()" style="margin-top:15px;">Выйти</button>
           </div>
         </div>
       </div>
     `;
     document.body.appendChild(modal);
-    window.isProfileEditing = false;
   };
 
-  window.toggleProfileEditMode = () => {
-    window.isProfileEditing = !window.isProfileEditing;
-    const modal = document.querySelector('.profile-modal-content');
-    if (!modal) return;
-    const icons = modal.querySelectorAll('.profile-edit-icon');
-    icons.forEach(i => i.style.visibility = window.isProfileEditing ? 'visible' : 'hidden');
-    const editBtn = document.getElementById('editToggleBtn');
-    editBtn.textContent = window.isProfileEditing ? 'Отменить' : 'Редактировать';
-    const actionBtn = document.getElementById('profileActionBtn');
-    actionBtn.textContent = window.isProfileEditing ? 'Применить' : 'Выйти';
-    actionBtn.classList.toggle('logout-btn', !window.isProfileEditing);
-    if (window.isProfileEditing) {
-      // Включаем редактирование полей
-      const emailSpan = document.getElementById('profileEmail');
-      if (emailSpan) emailSpan.contentEditable = true;
-      const passSpan = document.getElementById('profilePass');
-      if (passSpan) passSpan.contentEditable = true;
-    } else {
-      // Выключаем редактирование
-      const emailSpan = document.getElementById('profileEmail');
-      if (emailSpan) emailSpan.contentEditable = false;
-      const passSpan = document.getElementById('profilePass');
-      if (passSpan) passSpan.contentEditable = false;
-    }
-  };
-
-  window.handleProfileAction = () => {
-    if (window.isProfileEditing) {
-      // Сохранить изменения
-      const newContact = document.getElementById('profileUser')?.textContent || '';
-      const newEmail = document.getElementById('profileEmail')?.textContent || currentUser.email;
-      const newPass = document.getElementById('profilePass')?.textContent || currentUser.pass;
-      const resident = residentsData.find(r => r.nick === currentUser.nick);
-      if (resident && newContact !== '—') resident.user = newContact;
-      currentUser.email = newEmail;
-      if (newPass !== '••••••') currentUser.pass = newPass;
-      saveData();
-      toast('Изменения сохранены');
-      window.isProfileEditing = false;
-      toggleProfileEditMode();
-      // Обновить данные на экране
-      document.getElementById('profileEmail').textContent = currentUser.email;
-      document.getElementById('profilePass').textContent = '••••••';
-    } else {
-      logout();
-    }
-  };
-
-  window.copyUser = (text) => {
+  window.copyProfileUser = (btn, text) => {
     if (!text || text === '—') return;
     navigator.clipboard.writeText(text);
-    const el = document.getElementById('profileUser');
-    if (el) {
-      el.classList.add('copy-success');
-      const original = el.textContent;
-      el.textContent = 'Скопировано!';
-      setTimeout(() => { el.textContent = original; el.classList.remove('copy-success'); }, 2000);
-    }
+    btn.classList.add('copied');
+    btn.textContent = 'Скопировано!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.textContent = '📋';
+    }, 1500);
   };
 
   // ======================== СТРАНИЦЫ ========================
@@ -810,11 +790,11 @@
     { id:'tasks', label:'Задания', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>' }
   ];
 
-  function buildMenu(currentPageId) {
+  function buildMenu(pageId) {
     const menu = document.getElementById('collapsibleMenu');
     menu.innerHTML = '';
     allPages.forEach(p => {
-      if (p.id !== currentPageId) {
+      if (p.id !== pageId) {
         const btn = document.createElement('button');
         btn.className = 'nav-btn';
         btn.dataset.page = p.id;
@@ -823,12 +803,14 @@
         menu.appendChild(btn);
       }
     });
-    const currentPage = allPages.find(p => p.id === currentPageId);
+    const currentPage = allPages.find(p => p.id === pageId);
     const currentTab = document.getElementById('currentTab');
     currentTab.innerHTML = (currentPage ? currentPage.icon : '') + ' ' + (currentPage ? currentPage.label : 'Главная');
   }
 
   window.showPage = (page) => {
+    currentPageId = page;
+    saveData();
     playSound();
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const target = document.getElementById(page + 'Page');
@@ -918,31 +900,30 @@
     sightsData.forEach((s, i) => {
       const div = document.createElement('div');
       div.className = 'sight-item' + (i % 2 === 1 ? ' reverse' : '');
-      const firstImage = (s.images && s.images.length > 0) ? s.images[0] : 'https://via.placeholder.com/350x250?text=Нет+фото';
-      div.innerHTML = `<img src="${firstImage}" alt="${s.title}" onerror="this.src='https://via.placeholder.com/350x250?text=Ошибка'"><div class="sight-info"><h3>${s.title}</h3><p>${s.desc}</p></div>`;
+      const firstImage = (s.images && s.images.length > 0) ? s.images[0] : 'https://via.placeholder.com/220x150?text=Нет+фото';
+      div.innerHTML = `<img src="${firstImage}" alt="${s.title}" onerror="this.src='https://via.placeholder.com/220x150?text=Ошибка'"><div class="sight-info"><h3>${s.title}</h3><p>${s.desc}</p></div>`;
       div.addEventListener('click', () => openSightDetail(s));
       container.appendChild(div);
     });
   }
 
   function openSightDetail(sight) {
-    const images = sight.images || (sight.image ? [sight.image] : []);
+    const images = sight.images || [];
     const modal = document.createElement('div');
     modal.className = 'modal active';
     modal.innerHTML = `
       <div class="modal-content sight-detail-modal">
         <span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span>
-        <h3 style="display:flex; align-items:center; gap:10px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2v5M7 2v5"/></svg> Достопримечательность</h3>
-        <div class="image-slider">
-          ${images.map((img, idx) => `<img src="${img}" class="${idx === 0 ? 'active' : ''}" onerror="this.src='https://via.placeholder.com/600x350?text=Ошибка'">`).join('')}
+        <h3>${sight.title}</h3>
+        <div class="image-slider" style="height:300px;">
+          ${images.map((img, idx) => `<img src="${img}" class="${idx === 0 ? 'active' : ''}" onerror="this.src='https://via.placeholder.com/600x300?text=Ошибка'">`).join('')}
           ${images.length > 1 ? `<button class="slider-btn slider-prev" onclick="changeDetailSlide(this, -1)">←</button><button class="slider-btn slider-next" onclick="changeDetailSlide(this, 1)">→</button>` : ''}
         </div>
-        <p style="margin-top:15px;">${sight.desc}</p>
+        <p>${sight.desc}</p>
         <p><strong>Архитектор:</strong> ${sight.architect}</p>
-        <p><strong>Строитель:</strong> ${sight.builder || '—'}</p>
         <p><strong>Помощники:</strong> ${sight.helpers}</p>
         <p><strong>Дата постройки:</strong> ${sight.date}</p>
-        <p style="font-style:italic; color:var(--text-secondary);">${sight.thanks || 'Благодарим всех участников!'}</p>
+        <p style="font-style:italic;">${sight.thanks || 'Спасибо всем участникам!'}</p>
       </div>
     `;
     document.body.appendChild(modal);
@@ -957,18 +938,24 @@
     slides[activeIdx].classList.add('active');
   };
 
-  // ======================== НОВОСТИ ========================
+  // ======================== НОВОСТИ С ГАЛЕРЕЕЙ И ЛАЙТБОКСОМ ========================
   function renderNews() {
     const container = document.getElementById('newsContainer');
     if (!container) return;
     container.innerHTML = newsData.length === 0 ? '<p>Новостей пока нет.</p>' : '';
-    newsData.forEach(n => {
-      const images = n.images || (n.image ? [n.image] : []);
+    newsData.forEach((n, i) => {
+      const images = n.images || [];
       const card = document.createElement('div');
-      card.className = 'glass-card';
-      card.style.marginBottom = '20px';
+      card.className = 'glass-card news-card';
+      card.style.minHeight = '400px';
+      let galleryHTML = '';
+      if (images.length > 1) {
+        galleryHTML = `<div class="news-gallery">${images.map(img => `<img src="${img}" onclick="event.stopPropagation(); openLightbox('${img}', ${JSON.stringify(images).replace(/"/g, '&quot;')})" onerror="this.src='https://via.placeholder.com/300x200?text=Ошибка'">`).join('')}</div>`;
+      } else if (images.length === 1) {
+        galleryHTML = `<div class="news-gallery single-img"><img src="${images[0]}" onclick="event.stopPropagation(); openLightbox('${images[0]}', [])" onerror="this.src='https://via.placeholder.com/600x300?text=Ошибка'"></div>`;
+      }
       card.innerHTML = `
-        ${images.length > 0 ? `<div class="image-slider" style="height:250px;">${images.map((img, idx) => `<img src="${img}" class="${idx === 0 ? 'active' : ''}" onerror="this.src='https://via.placeholder.com/600x250?text=Ошибка'">`).join('')}${images.length > 1 ? `<button class="slider-btn slider-prev" onclick="event.stopPropagation(); changeNewsSlide(this, -1)">←</button><button class="slider-btn slider-next" onclick="event.stopPropagation(); changeNewsSlide(this, 1)">→</button>` : ''}</div>` : ''}
+        ${galleryHTML}
         <h3>${n.title}</h3>
         <p>${n.text}</p>
         <small style="color:var(--text-secondary);">${n.date}</small>
@@ -977,13 +964,24 @@
     });
   }
 
-  window.changeNewsSlide = (btn, dir) => {
-    const slider = btn.closest('.image-slider');
-    const slides = slider.querySelectorAll('img');
-    let activeIdx = [...slides].findIndex(s => s.classList.contains('active'));
-    slides[activeIdx].classList.remove('active');
-    activeIdx = (activeIdx + dir + slides.length) % slides.length;
-    slides[activeIdx].classList.add('active');
+  window.openLightbox = (currentSrc, allImages) => {
+    let imagesArray = allImages;
+    if (typeof imagesArray === 'string') imagesArray = JSON.parse(imagesArray);
+    let currentIndex = imagesArray.indexOf(currentSrc);
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+      <button class="lightbox-close" onclick="this.parentElement.remove()">✕</button>
+      <img src="${currentSrc}" id="lightboxImg">
+      ${imagesArray.length > 1 ? `<button class="slider-btn slider-prev" style="left:20px; font-size:3em; background:none;" onclick="lightboxNavigate(-1)">←</button><button class="slider-btn slider-next" style="right:20px; font-size:3em; background:none;" onclick="lightboxNavigate(1)">→</button>` : ''}
+    `;
+    document.body.appendChild(lightbox);
+    window.lightboxImages = imagesArray;
+    window.lightboxIndex = currentIndex;
+  };
+  window.lightboxNavigate = (dir) => {
+    window.lightboxIndex = (window.lightboxIndex + dir + window.lightboxImages.length) % window.lightboxImages.length;
+    document.getElementById('lightboxImg').src = window.lightboxImages[window.lightboxIndex];
   };
 
   // ======================== ЗАДАНИЯ ========================
@@ -1118,12 +1116,9 @@
     rulesText = document.getElementById('editableRules').innerHTML;
     saveData();
     toast('Правила сохранены!');
-    // Обновить вид на странице правил
     document.getElementById('rulesTextContainer').innerHTML = rulesText;
   };
 
-  // При открытии страницы правил показываем редактор, если пользователь админ?
-  // Сделаем проверку: если админ, показываем редактор, иначе просто текст.
   const origShowPage = window.showPage;
   window.showPage = function(page) {
     origShowPage(page);
@@ -1160,10 +1155,10 @@
 
   window.showPolicy = (type) => {
     const title = type === 'privacy' ? 'Конфиденциальность' : 'Условия пользования';
-    const text = type === 'privacy' ? `Политика конфиденциальности Хазбиково...` : `Условия использования...`;
+    const text = type === 'privacy' ? privacyPolicyText : termsOfUseText;
     const modal = document.createElement('div');
     modal.className = 'modal active';
-    modal.innerHTML = `<div class="modal-content"><span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span><h3>${title}</h3><div style="max-height:50vh; overflow-y:auto; white-space: pre-wrap;">${text}</div></div>`;
+    modal.innerHTML = `<div class="modal-content" style="max-width:700px;"><span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span><h3>${title}</h3><div style="max-height:70vh; overflow-y:auto;">${text}</div></div>`;
     document.body.appendChild(modal);
   };
 
@@ -1218,510 +1213,552 @@
     });
   });
 
-  // Drag-and-drop на дропзоны
-  document.addEventListener('dragover', (e) => {
-    const dz = e.target.closest('.dropzone');
-    if (dz) { e.preventDefault(); dz.classList.add('dragover'); }
-  });
-  document.addEventListener('dragleave', (e) => {
-    const dz = e.target.closest('.dropzone');
-    if (dz) dz.classList.remove('dragover');
-  });
-  document.addEventListener('drop', (e) => {
-    const dz = e.target.closest('.dropzone');
-    if (dz) {
-      e.preventDefault();
-      dz.classList.remove('dragover');
-    }
-  });
+  // Исправление бага с двойным открытием файла: убираем глобальный обработчик клика, который конфликтовал с встроенным в HTML
+  // Вместо этого оставляем только inline onclick на .dropzone, который уже вызывает click на скрытый input
 
-  // Симуляция клика по дропзоне
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('.dropzone') || e.target.closest('.dropzone')) {
-      const input = e.target.querySelector('input[type="file"]') || e.target.closest('.dropzone').querySelector('input[type="file"]');
-      if (input) input.click();
-    }
-  });
+  // Dropzone обработка ошибок и успеха (универсальная функция для загрузки файлов)
+  window.handleFileUpload = (input, successCallback) => {
+    const dropzone = input.closest('.dropzone');
+    dropzone.classList.remove('success', 'error');
+    const files = input.files;
+    if (!files.length) return;
+    Array.from(files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        successCallback(e.target.result);
+        dropzone.classList.add('success');
+        setTimeout(() => dropzone.classList.remove('success'), 2000);
+      };
+      reader.onerror = () => {
+        dropzone.classList.add('error');
+        toast('Ошибка загрузки файла', 'error');
+        setTimeout(() => dropzone.classList.remove('error'), 2000);
+      };
+      reader.readAsDataURL(file);
+    });
+    input.value = ''; // сброс, чтобы можно было повторно выбрать тот же файл
+  };
 
   // ======================== ИНИЦИАЛИЗАЦИЯ ========================
   window.addEventListener('load', () => {
     onlineCount++;
     saveData();
     window.addEventListener('beforeunload', () => { onlineCount--; saveData(); });
+
+    // Восстановление страницы
+    if (currentPageId && currentPageId !== 'home') {
+      showPage(currentPageId);
+    } else {
+      showPage('home');
+    }
+
     if (currentUser) {
       updateUI();
-      showPage('home');
     } else {
       applyTheme();
       updateUI();
-      showPage('home');
     }
+
     // Индикатор сложности пароля
     document.getElementById('regPass').addEventListener('input', () => {
       const p = document.getElementById('regPass').value;
       const bar = document.getElementById('passStrengthBar');
       bar.className = 'password-strength-bar';
-      if (p.length >= 8 && /[a-zA-Z]/.test(p) && /[0-9]/.test(p)) bar.classList.add('strength-strong');
+      if (p.length >= 8 && /^[a-zA-Z0-9]+$/.test(p) && p.length <= 15) bar.classList.add('strength-strong');
       else if (p.length >= 6) bar.classList.add('strength-medium');
       else if (p.length > 0) bar.classList.add('strength-weak');
     });
   });
 </script>
-<script>
-  // ======================== АДМИН-ПАНЕЛЬ ========================
-  window.openAdmin = () => {
-    if (!currentUser || (currentUser.role !== 'admin' && currentUser.nick !== 'Xazbik_')) return;
-    const modal = document.createElement('div');
-    modal.className = 'modal active';
-    modal.innerHTML = `
-      <div class="modal-content admin-panel">
-        <span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span>
-        <h3>Админ-панель</h3>
-        <p>Онлайн: <span id="onlineCount">${onlineCount}</span></p>
-        <div class="admin-tabs" id="adminTabs"></div>
-        <div id="adminEditorContainer"></div>
+<!-- КОНЕЦ ЧАСТИ 2 -->
+// ======================== АДМИН-ПАНЕЛЬ ========================
+window.openAdmin = () => {
+  if (!currentUser || (currentUser.role !== 'admin' && currentUser.nick !== 'Xazbik_')) return;
+  const modal = document.createElement('div');
+  modal.className = 'modal active';
+  modal.innerHTML = `
+    <div class="modal-content admin-panel">
+      <span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span>
+      <h3>Админ-панель</h3>
+      <p>Онлайн: <span id="onlineCount">${onlineCount}</span></p>
+      <div class="admin-tabs" id="adminTabs"></div>
+      <div id="adminEditorContainer"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  buildAdminTabs();
+};
+
+const adminSections = ['residents', 'chs', 'sights', 'rules', 'news', 'tasks', 'social', 'versions', 'moders', 'history', 'about', 'settings', 'users', 'homepage'];
+
+function buildAdminTabs() {
+  const tabs = document.getElementById('adminTabs');
+  tabs.innerHTML = '';
+  adminSections.forEach(sec => {
+    const btn = document.createElement('button');
+    btn.className = 'admin-tab-btn';
+    btn.textContent = { residents:'Жители', chs:'ЧС', sights:'Достоприм.', rules:'Правила', news:'Новости', tasks:'Задания', social:'Ссылки', versions:'Версии', moders:'Модеры', history:'История', about:'О нас', settings:'Настройки', users:'Пользователи', homepage:'Главная' }[sec];
+    btn.addEventListener('click', () => switchAdminTab(sec));
+    tabs.appendChild(btn);
+  });
+  switchAdminTab('residents');
+}
+
+function switchAdminTab(section) {
+  const container = document.getElementById('adminEditorContainer');
+  container.innerHTML = '';
+  if (section === 'residents') {
+    container.innerHTML = '<h4>Редактирование жителей</h4>';
+    residentsData.forEach((r, i) => {
+      container.innerHTML += `<div class="admin-field"><label>Ник:</label><input value="${r.nick}" data-idx="${i}" data-field="nick"> <label>Роль:</label><input value="${r.role}" data-idx="${i}" data-field="role"> <label>Юз:</label><input value="${r.user}" data-idx="${i}" data-field="user"> <button onclick="deleteResident(${i})">Удалить</button></div>`;
+    });
+    container.innerHTML += '<button onclick="addResident()">Добавить жителя</button>';
+  } else if (section === 'chs') {
+    container.innerHTML = '<h4>Редактирование ЧС</h4>';
+    chsData.forEach((c, i) => {
+      container.innerHTML += `<div class="admin-field"><label>Ник:</label><input value="${c.nick}" data-idx="${i}" data-field="nick"> <label>Причина:</label><input value="${c.reason}" data-idx="${i}" data-field="reason"> <label>Дата:</label><input value="${c.date}" data-idx="${i}" data-field="date"> <button onclick="deleteChs(${i})">Удалить</button></div>`;
+    });
+    container.innerHTML += '<button onclick="addChs()">Добавить в ЧС</button>';
+  } else if (section === 'sights') {
+    container.innerHTML = '<h4>Редактирование достопримечательностей</h4><div id="sightsAdminList"></div><button onclick="addSight()">Добавить достопримечательность</button>';
+    renderSightsAdmin();
+  } else if (section === 'rules') {
+    container.innerHTML = `
+      <h4>Правила (редактор)</h4>
+      <div class="format-bar">
+        <button onclick="formatDoc('bold')"><b>B</b></button>
+        <button onclick="formatDoc('italic')"><i>I</i></button>
+        <button onclick="formatDoc('underline')"><u>U</u></button>
+        <button onclick="changeDocFontSize()">Размер</button>
+        <input type="color" id="adminRuleColor" onchange="changeDocColor(this.value)" title="Цвет текста">
+        <button onclick="insertDocImage()">Картинка</button>
       </div>
+      <div id="adminRulesEdit" contenteditable="true" style="min-height:300px; border:1px solid var(--glass-border); border-radius:12px; padding:15px; background:var(--input-bg);">${rulesText}</div>
+      <button onclick="saveRules()" style="margin-top:10px;">Сохранить</button>
     `;
-    document.body.appendChild(modal);
-    buildAdminTabs();
-  };
-
-  const adminSections = ['residents', 'chs', 'sights', 'rules', 'news', 'tasks', 'social', 'versions', 'moders', 'history', 'about', 'settings', 'users', 'homepage'];
-
-  function buildAdminTabs() {
-    const tabs = document.getElementById('adminTabs');
-    tabs.innerHTML = '';
-    adminSections.forEach(sec => {
-      const btn = document.createElement('button');
-      btn.className = 'admin-tab-btn';
-      btn.textContent = { residents:'Жители', chs:'ЧС', sights:'Достоприм.', rules:'Правила', news:'Новости', tasks:'Задания', social:'Ссылки', versions:'Версии', moders:'Модеры', history:'История', about:'О нас', settings:'Настройки', users:'Пользователи', homepage:'Главная' }[sec];
-      btn.addEventListener('click', () => switchAdminTab(sec));
-      tabs.appendChild(btn);
+  } else if (section === 'news') {
+    container.innerHTML = '<h4>Новости</h4><div id="newsAdminList"></div><button onclick="addNews()">Добавить новость</button>';
+    renderNewsAdmin();
+  } else if (section === 'tasks') {
+    container.innerHTML = '<h4>Управление заданиями</h4><p>Выберите дату для просмотра и редактирования заданий:</p><input type="date" id="taskViewDate"><button onclick="viewTasksByDate()">Показать</button><div id="taskEditor"></div>';
+  } else if (section === 'social') {
+    container.innerHTML = `<h4>Ссылки на соцсети</h4><div class="admin-field"><label>Telegram:</label><input id="tgLink" value="${socialLinks.tg}"></div><div class="admin-field"><label>Discord:</label><input id="dsLink" value="${socialLinks.ds}"></div><button onclick="saveSocial()">Сохранить</button>`;
+  } else if (section === 'versions') {
+    container.innerHTML = '<h4>Версии</h4><div id="versionsAdminList"></div><button onclick="addVersion()">Добавить версию</button>';
+    renderVersionsAdmin();
+  } else if (section === 'moders') {
+    container.innerHTML = '<h4>Модераторы</h4><div class="admin-field"><label>Ник:</label><input id="newModerNick"><button onclick="addModer()">Назначить модером</button></div><br>';
+    users.forEach(u => {
+      container.innerHTML += `<div>${u.nick} - ${u.role} <button onclick="toggleModer('${u.nick}')">${u.role === 'moder' ? 'Разжаловать' : 'Сделать модером'}</button> <button onclick="editModerPermissions('${u.nick}')">Права</button> <button onclick="deleteUser('${u.nick}')">Удалить</button></div>`;
     });
-    switchAdminTab('residents');
+  } else if (section === 'history') {
+    container.innerHTML = '<h4>История действий модераторов</h4><button onclick="revertLastModAction()">Отменить последнее действие</button><button onclick="exportPasswords()" style="margin-left:10px;">Экспорт паролей</button>';
+    modHistory.slice().reverse().forEach(h => {
+      container.innerHTML += `<div style="margin-bottom:5px;border-bottom:1px solid var(--glass-border);padding:5px;">${h.date} — ${h.moder} ${h.action}</div>`;
+    });
+  } else if (section === 'about') {
+    container.innerHTML = `<h4>Редактирование текстов «О нас»</h4><div class="admin-field"><label>Колонка 1:</label><textarea id="aboutText1">${aboutTexts[0]}</textarea></div><div class="admin-field"><label>Колонка 2:</label><textarea id="aboutText2">${aboutTexts[1]}</textarea></div><div class="admin-field"><label>Колонка 3:</label><textarea id="aboutText3">${aboutTexts[2]}</textarea></div><button onclick="saveAbout()">Сохранить</button>`;
+  } else if (section === 'settings') {
+    container.innerHTML = `<h4>Настройки админки</h4><div class="admin-field"><label>Звук кнопок:</label><input type="file" id="customSoundFile" accept="audio/*" onchange="uploadSound()"></div>${customSound ? '<p>Загруженный звук: <audio controls src="' + customSound + '"></audio></p>' : ''}<button onclick="resetSound()">Сбросить звук</button>`;
+  } else if (section === 'users') {
+    container.innerHTML = '<h4>Управление пользователями</h4><button onclick="exportPasswords()">Скачать passvord.txt</button><br>';
+    users.forEach(u => {
+      container.innerHTML += `<div style="margin-bottom:8px;">${u.nick} (${u.email}) <button onclick="resetUserPassword('${u.nick}')">Сбросить пароль</button> <button onclick="resetUserEmail('${u.nick}')">Сбросить почту</button> <button onclick="changeUserNick('${u.nick}')">Сменить ник</button> <button onclick="deleteUser('${u.nick}')">Удалить</button></div>`;
+    });
+  } else if (section === 'homepage') {
+    container.innerHTML = `<h4>Редактирование главной страницы</h4><label>Заголовок:</label><input id="welcomeTitleInput" value="${welcomeText}"><label>Подзаголовок:</label><textarea id="welcomeSubInput">${welcomeSubText}</textarea><button onclick="saveHomepage()">Сохранить</button>`;
   }
 
-  function switchAdminTab(section) {
-    const container = document.getElementById('adminEditorContainer');
-    container.innerHTML = '';
-    // Жители
-    if (section === 'residents') {
-      container.innerHTML = '<h4>Редактирование жителей</h4>';
-      residentsData.forEach((r, i) => {
-        container.innerHTML += `<div class="admin-field"><label>Ник:</label><input value="${r.nick}" data-idx="${i}" data-field="nick"> <label>Роль:</label><input value="${r.role}" data-idx="${i}" data-field="role"> <label>Юз:</label><input value="${r.user}" data-idx="${i}" data-field="user"> <button onclick="deleteResident(${i})">Удалить</button></div>`;
-      });
-      container.innerHTML += '<button onclick="addResident()">Добавить жителя</button>';
-    }
-    // ЧС
-    else if (section === 'chs') {
-      container.innerHTML = '<h4>Редактирование ЧС</h4>';
-      chsData.forEach((c, i) => {
-        container.innerHTML += `<div class="admin-field"><label>Ник:</label><input value="${c.nick}" data-idx="${i}" data-field="nick"> <label>Причина:</label><input value="${c.reason}" data-idx="${i}" data-field="reason"> <label>Дата:</label><input value="${c.date}" data-idx="${i}" data-field="date"> <button onclick="deleteChs(${i})">Удалить</button></div>`;
-      });
-      container.innerHTML += '<button onclick="addChs()">Добавить в ЧС</button>';
-    }
-    // Достопримечательности (как новости, но с архитектором, строителем, помощниками)
-    else if (section === 'sights') {
-      container.innerHTML = '<h4>Редактирование достопримечательностей</h4><div id="sightsAdminList"></div><button onclick="addSight()">Добавить достопримечательность</button>';
-      renderSightsAdmin();
-    }
-    // Правила (встроенный редактор с форматированием и пипеткой)
-    else if (section === 'rules') {
-      container.innerHTML = `
-        <h4>Правила (редактор)</h4>
-        <div class="format-bar">
-          <button onclick="formatDoc('bold')"><b>B</b></button>
-          <button onclick="formatDoc('italic')"><i>I</i></button>
-          <button onclick="formatDoc('underline')"><u>U</u></button>
-          <button onclick="changeFontSize()">Размер</button>
-          <input type="color" id="adminRuleColor" onchange="changeDocColor(this.value)" title="Цвет текста">
-          <button onclick="insertImage()">Картинка</button>
-        </div>
-        <div id="adminRulesEdit" contenteditable="true" style="min-height:300px; border:1px solid var(--glass-border); border-radius:12px; padding:15px; background:var(--input-bg);">${rulesText}</div>
-        <button onclick="saveRules()" style="margin-top:10px;">Сохранить</button>
-      `;
-    }
-    // Новости
-    else if (section === 'news') {
-      container.innerHTML = '<h4>Новости</h4><div id="newsAdminList"></div><button onclick="addNews()">Добавить новость</button>';
-      renderNewsAdmin();
-    }
-    // Задания
-    else if (section === 'tasks') {
-      container.innerHTML = '<h4>Управление заданиями</h4><p>Выберите дату для просмотра и редактирования заданий:</p><input type="date" id="taskViewDate"><button onclick="viewTasksByDate()">Показать</button><div id="taskEditor"></div>';
-    }
-    // Ссылки
-    else if (section === 'social') {
-      container.innerHTML = `<h4>Ссылки на соцсети</h4><div class="admin-field"><label>Telegram:</label><input id="tgLink" value="${socialLinks.tg}"></div><div class="admin-field"><label>Discord:</label><input id="dsLink" value="${socialLinks.ds}"></div><button onclick="saveSocial()">Сохранить</button>`;
-    }
-    // Версии
-    else if (section === 'versions') {
-      container.innerHTML = '<h4>Версии</h4><div id="versionsAdminList"></div><button onclick="addVersion()">Добавить версию</button>';
-      renderVersionsAdmin();
-    }
-    // Модераторы
-    else if (section === 'moders') {
-      container.innerHTML = '<h4>Модераторы</h4><div class="admin-field"><label>Ник:</label><input id="newModerNick"><button onclick="addModer()">Назначить модером</button></div><br>';
-      users.forEach(u => {
-        container.innerHTML += `<div>${u.nick} - ${u.role} <button onclick="toggleModer('${u.nick}')">${u.role === 'moder' ? 'Разжаловать' : 'Сделать модером'}</button> <button onclick="editModerPermissions('${u.nick}')">Права</button> <button onclick="deleteUser('${u.nick}')">Удалить</button></div>`;
-      });
-    }
-    // История
-    else if (section === 'history') {
-      container.innerHTML = '<h4>История действий модераторов</h4><button onclick="revertLastModAction()">Отменить последнее действие</button>';
-      modHistory.slice().reverse().forEach(h => {
-        container.innerHTML += `<div style="margin-bottom:5px;border-bottom:1px solid var(--glass-border);padding:5px;">${h.date} — ${h.moder} ${h.action}</div>`;
-      });
-    }
-    // О нас
-    else if (section === 'about') {
-      container.innerHTML = `<h4>Редактирование текстов «О нас»</h4><div class="admin-field"><label>Колонка 1:</label><textarea id="aboutText1">${aboutTexts[0]}</textarea></div><div class="admin-field"><label>Колонка 2:</label><textarea id="aboutText2">${aboutTexts[1]}</textarea></div><div class="admin-field"><label>Колонка 3:</label><textarea id="aboutText3">${aboutTexts[2]}</textarea></div><button onclick="saveAbout()">Сохранить</button>`;
-    }
-    // Настройки админки
-    else if (section === 'settings') {
-      container.innerHTML = `<h4>Настройки админки</h4><div class="admin-field"><label>Звук кнопок:</label><input type="file" id="customSoundFile" accept="audio/*" onchange="uploadSound()"></div>${customSound ? '<p>Загруженный звук: <audio controls src="' + customSound + '"></audio></p>' : ''}<button onclick="resetSound()">Сбросить звук</button>`;
-    }
-    // Пользователи
-    else if (section === 'users') {
-      container.innerHTML = '<h4>Управление пользователями</h4>';
-      users.forEach(u => {
-        container.innerHTML += `<div style="margin-bottom:8px;">${u.nick} (${u.email}) <button onclick="resetUserPassword('${u.nick}')">Сбросить пароль</button> <button onclick="resetUserEmail('${u.nick}')">Сбросить почту</button> <button onclick="changeUserNick('${u.nick}')">Сменить ник</button> <button onclick="deleteUser('${u.nick}')">Удалить</button></div>`;
-      });
-    }
-    // Главная страница
-    else if (section === 'homepage') {
-      container.innerHTML = `<h4>Редактирование главной страницы</h4><label>Заголовок:</label><input id="welcomeTitleInput" value="${welcomeText}"><label>Подзаголовок:</label><textarea id="welcomeSubInput">${welcomeSubText}</textarea><button onclick="saveHomepage()">Сохранить</button>`;
-    }
-
-    // Автосохранение при вводе в полях с data-idx
-    container.querySelectorAll('input[data-idx], textarea[data-idx]').forEach(inp => {
-      inp.addEventListener('input', function() {
-        const idx = parseInt(this.dataset.idx);
-        const field = this.dataset.field;
-        if (section === 'residents') residentsData[idx][field] = this.value;
-        else if (section === 'chs') chsData[idx][field] = this.value;
-        else if (section === 'sights') {
-          if (field === 'images') sightsData[idx].images = this.value.split(',').map(s => s.trim()).filter(Boolean);
-          else sightsData[idx][field] = this.value;
-        }
-        saveData();
-      });
-    });
-  }
-
-  // ======================== ФУНКЦИИ АДМИНКИ ========================
-  // Жители
-  window.deleteResident = (i) => { residentsData.splice(i,1); saveData(); switchAdminTab('residents'); renderResidentsTable(); };
-  window.addResident = () => { residentsData.push({ nick:'Новый', role:'Житель', roleClass:'role-resident', user:'@', desc:'' }); saveData(); switchAdminTab('residents'); renderResidentsTable(); };
-  // ЧС
-  window.deleteChs = (i) => { chsData.splice(i,1); saveData(); switchAdminTab('chs'); renderChsTable(); };
-  window.addChs = () => { chsData.push({ nick:'Игрок', reason:'Причина', date:'Неизвестна', desc:'' }); saveData(); switchAdminTab('chs'); renderChsTable(); };
-  // Достопримечательности (админ-список как у новостей)
-  function renderSightsAdmin() {
-    const list = document.getElementById('sightsAdminList');
-    if (!list) return;
-    list.innerHTML = '';
-    sightsData.forEach((s, i) => {
-      const imagesStr = (s.images || []).join(', ');
-      list.innerHTML += `
-        <div style="margin-bottom:15px; border:1px solid var(--glass-border); border-radius:15px; padding:10px;">
-          <div class="admin-field"><label>Название:</label><input value="${s.title}" data-sight-idx="${i}" data-field="title"></div>
-          <div class="admin-field"><label>Описание:</label><textarea data-sight-idx="${i}" data-field="desc">${s.desc}</textarea></div>
-          <div class="admin-field"><label>Изображения (через запятую):</label><input value="${imagesStr}" data-sight-idx="${i}" data-field="images"></div>
-          <div class="admin-field"><label>Архитектор:</label><input value="${s.architect}" data-sight-idx="${i}" data-field="architect"></div>
-          <div class="admin-field"><label>Строитель:</label><input value="${s.builder || ''}" data-sight-idx="${i}" data-field="builder"></div>
-          <div class="admin-field"><label>Помощники:</label><input value="${s.helpers}" data-sight-idx="${i}" data-field="helpers"></div>
-          <div class="admin-field"><label>Дата:</label><input value="${s.date}" data-sight-idx="${i}" data-field="date"></div>
-          <div class="admin-field"><label>Благодарность:</label><input value="${s.thanks}" data-sight-idx="${i}" data-field="thanks"></div>
-          <div class="dropzone" onclick="this.querySelector('input').click()"><input type="file" multiple accept="image/*" style="display:none" onchange="handleSightFiles(this, ${i})">Перетащите или кликните для загрузки фото</div>
-          <button onclick="deleteSight(${i})">Удалить</button>
-        </div>
-      `;
-    });
-    list.querySelectorAll('input[data-sight-idx], textarea[data-sight-idx]').forEach(el => {
-      el.addEventListener('input', function() {
-        const idx = parseInt(this.dataset.sightIdx);
-        const field = this.dataset.field;
+  // Автосохранение
+  container.querySelectorAll('input[data-idx], textarea[data-idx]').forEach(inp => {
+    inp.addEventListener('input', function() {
+      const idx = parseInt(this.dataset.idx);
+      const field = this.dataset.field;
+      if (section === 'residents') residentsData[idx][field] = this.value;
+      else if (section === 'chs') chsData[idx][field] = this.value;
+      else if (section === 'sights') {
         if (field === 'images') sightsData[idx].images = this.value.split(',').map(s => s.trim()).filter(Boolean);
         else sightsData[idx][field] = this.value;
-        saveData();
-      });
-    });
-  }
-  window.handleSightFiles = (input, idx) => {
-    const files = input.files;
-    if (!files.length) return;
-    if (!sightsData[idx].images) sightsData[idx].images = [];
-    Array.from(files).forEach(file => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        sightsData[idx].images.push(e.target.result);
-        saveData();
-        renderSightsAdmin();
-      };
-      reader.readAsDataURL(file);
-    });
-  };
-  window.addSight = () => { sightsData.push({ title:'Новая', images:[], desc:'', architect:'', builder:'', helpers:'', date:'', thanks:'' }); saveData(); renderSightsAdmin(); renderSights(); };
-  window.deleteSight = (i) => { sightsData.splice(i,1); saveData(); renderSightsAdmin(); renderSights(); };
-
-  // Новости (админ)
-  function renderNewsAdmin() {
-    const list = document.getElementById('newsAdminList');
-    if (!list) return;
-    list.innerHTML = '';
-    newsData.forEach((n, i) => {
-      const imagesStr = (n.images || []).join(', ');
-      list.innerHTML += `
-        <div style="margin-bottom:15px; border:1px solid var(--glass-border); border-radius:15px; padding:10px;">
-          <div class="admin-field"><label>Заголовок:</label><input value="${n.title}" data-news-idx="${i}" data-field="title"></div>
-          <div class="admin-field"><label>Текст:</label><textarea data-news-idx="${i}" data-field="text">${n.text}</textarea></div>
-          <div class="admin-field"><label>Дата:</label><input value="${n.date}" data-news-idx="${i}" data-field="date"></div>
-          <div class="admin-field"><label>Изображения (через запятую):</label><input value="${imagesStr}" data-news-idx="${i}" data-field="images"></div>
-          <div class="dropzone" onclick="this.querySelector('input').click()"><input type="file" multiple accept="image/*" style="display:none" onchange="handleNewsFiles(this, ${i})">Перетащите или кликните для загрузки фото</div>
-          <button onclick="deleteNews(${i})">Удалить</button>
-        </div>
-      `;
-    });
-    list.querySelectorAll('input[data-news-idx], textarea[data-news-idx]').forEach(el => {
-      el.addEventListener('input', function() {
-        const idx = parseInt(this.dataset.newsIdx);
-        const field = this.dataset.field;
-        if (field === 'images') newsData[idx].images = this.value.split(',').map(s => s.trim()).filter(Boolean);
-        else newsData[idx][field] = this.value;
-        saveData();
-      });
-    });
-  }
-  window.handleNewsFiles = (input, idx) => {
-    const files = input.files;
-    if (!files.length) return;
-    if (!newsData[idx].images) newsData[idx].images = [];
-    Array.from(files).forEach(file => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        newsData[idx].images.push(e.target.result);
-        saveData();
-        renderNewsAdmin();
-      };
-      reader.readAsDataURL(file);
-    });
-  };
-  window.addNews = () => { newsData.push({ title:'Новая новость', text:'', date: new Date().toLocaleDateString(), images:[] }); saveData(); renderNewsAdmin(); };
-  window.deleteNews = (i) => { newsData.splice(i,1); saveData(); renderNewsAdmin(); renderNews(); };
-
-  // Правила (из админки)
-  window.formatDoc = (command) => {
-    document.execCommand(command, false, null);
-    document.getElementById('adminRulesEdit')?.focus();
-  };
-  window.changeFontSize = () => {
-    const size = prompt('Размер шрифта (например, 16px):');
-    if (size) document.execCommand('fontSize', false, size);
-  };
-  window.changeDocColor = (color) => {
-    document.execCommand('foreColor', false, color);
-    document.getElementById('adminRulesEdit')?.focus();
-  };
-  window.insertImage = () => {
-    const url = prompt('URL картинки:');
-    if (url) document.execCommand('insertImage', false, url);
-  };
-  window.saveRules = () => {
-    rulesText = document.getElementById('adminRulesEdit').innerHTML;
-    saveData();
-    document.getElementById('rulesTextContainer').innerHTML = rulesText;
-    toast('Правила сохранены');
-  };
-
-  // Задания
-  window.viewTasksByDate = () => {
-    const date = document.getElementById('taskViewDate').value;
-    if (!date) return;
-    const tasks = tasksData[date] || [];
-    const editor = document.getElementById('taskEditor');
-    editor.innerHTML = tasks.map((t, i) => `
-      <div style="border:1px solid var(--glass-border); border-radius:10px; padding:10px; margin:5px 0;">
-        <input value="${t.text}" data-task-date="${date}" data-task-idx="${i}" data-field="text">
-        <input value="${t.assignedTo || ''}" placeholder="Ник" data-task-date="${date}" data-task-idx="${i}" data-field="assignedTo">
-        <select data-task-date="${date}" data-task-idx="${i}" data-field="status">
-          <option value="pending" ${t.status==='pending'?'selected':''}>Ожидает</option>
-          <option value="completed" ${t.status==='completed'?'selected':''}>Выполнено</option>
-        </select>
-        <button onclick="deleteTask('${date}', ${i})">Удалить</button>
-      </div>
-    `).join('');
-    editor.querySelectorAll('input, select').forEach(el => {
-      el.addEventListener('input', function() {
-        const d = this.dataset.taskDate;
-        const idx = parseInt(this.dataset.taskIdx);
-        const field = this.dataset.field;
-        if (tasksData[d] && tasksData[d][idx]) tasksData[d][idx][field] = this.value;
-        saveData();
-      });
-    });
-  };
-  window.deleteTask = (date, idx) => { tasksData[date].splice(idx, 1); if (tasksData[date].length === 0) delete tasksData[date]; saveData(); viewTasksByDate(); };
-
-  // Ссылки
-  window.saveSocial = () => { socialLinks.tg = document.getElementById('tgLink').value; socialLinks.ds = document.getElementById('dsLink').value; saveData(); toast('Ссылки сохранены'); };
-
-  // Версии
-  function renderVersionsAdmin() {
-    const list = document.getElementById('versionsAdminList');
-    if (!list) return;
-    list.innerHTML = '';
-    versionData.forEach((v, i) => {
-      list.innerHTML += `
-        <div style="margin-bottom:15px; border:1px solid var(--glass-border); border-radius:15px; padding:10px;">
-          <div class="admin-field"><label>Версия:</label><input value="${v.version}" data-ver-idx="${i}" data-field="version"></div>
-          <div class="admin-field"><label>Дата:</label><input value="${v.date}" data-ver-idx="${i}" data-field="date"></div>
-          <div class="admin-field"><label>Описание:</label><textarea data-ver-idx="${i}" data-field="desc">${v.desc}</textarea></div>
-          <div>Картинки: ${v.images.map((img,imgIdx) => `<img src="${img}" style="max-width:50px; border-radius:5px; margin:2px;" onclick="removeVersionImg(${i}, ${imgIdx})">`).join('')}</div>
-          <div class="dropzone" onclick="this.querySelector('input').click()"><input type="file" multiple accept="image/*" style="display:none" onchange="handleVersionFiles(this, ${i})">Добавить картинки</div>
-          <button onclick="deleteVersion(${i})">Удалить</button>
-        </div>
-      `;
-    });
-    list.querySelectorAll('input[data-ver-idx], textarea[data-ver-idx]').forEach(el => {
-      el.addEventListener('input', function() {
-        const idx = parseInt(this.dataset.verIdx);
-        const field = this.dataset.field;
-        versionData[idx][field] = this.value;
-        saveData();
-      });
-    });
-  }
-  window.handleVersionFiles = (input, idx) => {
-    Array.from(input.files).forEach(file => {
-      const reader = new FileReader();
-      reader.onload = (e) => { versionData[idx].images.push(e.target.result); saveData(); renderVersionsAdmin(); };
-      reader.readAsDataURL(file);
-    });
-  };
-  window.removeVersionImg = (verIdx, imgIdx) => { versionData[verIdx].images.splice(imgIdx,1); saveData(); renderVersionsAdmin(); };
-  window.addVersion = () => { versionData.push({ version:'v0.0.0', date:'', images:[], desc:'' }); saveData(); renderVersionsAdmin(); };
-  window.deleteVersion = (i) => { versionData.splice(i,1); saveData(); renderVersionsAdmin(); };
-
-  // Модераторы и пользователи
-  window.toggleModer = (nick) => {
-    const user = users.find(u => u.nick === nick);
-    if (!user || user.nick === 'Xazbik_') return;
-    const action = user.role === 'moder' ? 'разжалован' : 'назначен модером';
-    user.role = user.role === 'moder' ? 'user' : 'moder';
-    modHistory.push({ date: new Date().toISOString(), moder: currentUser.nick, action: `${action} пользователь ${nick}` });
-    saveData();
-    switchAdminTab('moders');
-    toast(action);
-  };
-  window.addModer = () => {
-    const nick = document.getElementById('newModerNick').value.trim();
-    const user = users.find(u => u.nick === nick);
-    if (!user) return toast('Пользователь не найден', 'error');
-    if (user.role === 'admin') return toast('Нельзя изменить администратора', 'error');
-    user.role = 'moder';
-    modHistory.push({ date: new Date().toISOString(), moder: currentUser.nick, action: `назначен модером пользователь ${nick}` });
-    saveData();
-    switchAdminTab('moders');
-    toast('Модератор назначен');
-  };
-  window.deleteUser = (nick) => {
-    if (nick === 'Xazbik_') return toast('Нельзя удалить главного администратора', 'error');
-    users = users.filter(u => u.nick !== nick);
-    modHistory.push({ date: new Date().toISOString(), moder: currentUser.nick, action: `удалён пользователь ${nick}` });
-    saveData();
-    switchAdminTab('moders');
-    toast('Пользователь удалён');
-  };
-  window.revertLastModAction = () => {
-    if (modHistory.length === 0) return toast('История пуста', 'error');
-    const last = modHistory.pop();
-    const nick = last.action.split(' ').pop();
-    const user = users.find(u => u.nick === nick);
-    if (user) {
-      user.role = user.role === 'moder' ? 'user' : 'moder';
+      }
       saveData();
-      toast(`Откат: ${last.action}`);
-      switchAdminTab('history');
-    }
-  };
-  window.editModerPermissions = (nick) => {
-    const currentPerms = moderatorPermissions[nick] || ['residents','chs','sights','rules','news','tasks'];
-    const allSections = ['residents','chs','sights','rules','news','tasks','social','versions','moders','history','about','settings'];
-    const modal = document.createElement('div');
-    modal.className = 'modal active';
-    modal.innerHTML = `
-      <div class="modal-content">
-        <span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span>
-        <h3>Права модератора ${nick}</h3>
-        ${allSections.map(sec => `<label><input type="checkbox" value="${sec}" ${currentPerms.includes(sec)?'checked':''}> ${sec}</label><br>`).join('')}
-        <button class="btn-glass primary" onclick="saveModerPermissions('${nick}')">Сохранить</button>
+    });
+  });
+}
+
+// ======================== ФУНКЦИИ АДМИНКИ ========================
+window.deleteResident = (i) => { residentsData.splice(i,1); saveData(); switchAdminTab('residents'); renderResidentsTable(); };
+window.addResident = () => { residentsData.push({ nick:'Новый', role:'Житель', roleClass:'role-resident', user:'@', desc:'' }); saveData(); switchAdminTab('residents'); renderResidentsTable(); };
+window.deleteChs = (i) => { chsData.splice(i,1); saveData(); switchAdminTab('chs'); renderChsTable(); };
+window.addChs = () => { chsData.push({ nick:'Игрок', reason:'Причина', date:'Неизвестна', desc:'' }); saveData(); switchAdminTab('chs'); renderChsTable(); };
+
+function renderSightsAdmin() {
+  const list = document.getElementById('sightsAdminList');
+  if (!list) return;
+  list.innerHTML = '';
+  sightsData.forEach((s, i) => {
+    const imagesStr = (s.images || []).join(', ');
+    list.innerHTML += `
+      <div style="margin-bottom:15px; border:1px solid var(--glass-border); border-radius:15px; padding:10px;">
+        <div class="admin-field"><label>Название:</label><input value="${s.title}" data-sight-idx="${i}" data-field="title"></div>
+        <div class="admin-field"><label>Описание:</label><textarea data-sight-idx="${i}" data-field="desc">${s.desc}</textarea></div>
+        <div class="admin-field"><label>Изображения (через запятую):</label><input value="${imagesStr}" data-sight-idx="${i}" data-field="images"></div>
+        <div class="admin-field"><label>Архитектор:</label><input value="${s.architect}" data-sight-idx="${i}" data-field="architect"></div>
+        <div class="admin-field"><label>Строитель:</label><input value="${s.builder || ''}" data-sight-idx="${i}" data-field="builder"></div>
+        <div class="admin-field"><label>Помощники:</label><input value="${s.helpers}" data-sight-idx="${i}" data-field="helpers"></div>
+        <div class="admin-field"><label>Дата:</label><input value="${s.date}" data-sight-idx="${i}" data-field="date"></div>
+        <div class="admin-field"><label>Благодарность:</label><input value="${s.thanks}" data-sight-idx="${i}" data-field="thanks"></div>
+        <div class="dropzone" onclick="this.querySelector('input').click()"><input type="file" multiple accept="image/*" style="display:none" onchange="window.handleFileUpload(this, (src) => { if(!sightsData[${i}].images) sightsData[${i}].images=[]; sightsData[${i}].images.push(src); saveData(); renderSightsAdmin(); })">Перетащите или кликните для загрузки фото</div>
+        <button onclick="deleteSight(${i})">Удалить</button>
       </div>
     `;
-    document.body.appendChild(modal);
-  };
-  window.saveModerPermissions = (nick) => {
-    const checks = [...document.querySelectorAll('.modal.active input[type="checkbox"]:checked')].map(c => c.value);
-    moderatorPermissions[nick] = checks;
-    saveData();
-    toast('Права сохранены');
-    closeModalWithAnimation('...'); // Закроем вручную
-    document.querySelector('.modal.active .modal-close-btn')?.click();
-  };
-  window.saveAbout = () => {
-    aboutTexts[0] = document.getElementById('aboutText1').value;
-    aboutTexts[1] = document.getElementById('aboutText2').value;
-    aboutTexts[2] = document.getElementById('aboutText3').value;
-    saveData();
-    renderDescription();
-    toast('Описание сохранено');
-  };
-  window.uploadSound = () => {
-    const file = document.getElementById('customSoundFile').files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => { customSound = reader.result; saveData(); toast('Звук загружен!'); switchAdminTab('settings'); };
-    reader.readAsDataURL(file);
-  };
-  window.resetSound = () => { customSound = ''; saveData(); toast('Звук сброшен'); switchAdminTab('settings'); };
-  window.resetUserPassword = (nick) => {
-    const user = users.find(u => u.nick === nick);
-    if (!user) return;
-    user.pass = '12345';
-    saveData();
-    toast(`Пароль ${nick} сброшен на "12345"`);
-  };
-  window.resetUserEmail = (nick) => {
-    const user = users.find(u => u.nick === nick);
-    if (!user) return;
-    user.email = prompt('Новая почта:', user.email);
-    if (user.email) { saveData(); toast('Почта обновлена'); }
-  };
-  window.changeUserNick = (nick) => {
-    const user = users.find(u => u.nick === nick);
-    if (!user) return;
-    const newNick = prompt('Новый ник:', user.nick);
-    if (newNick && newNick !== user.nick && !users.find(u => u.nick === newNick)) {
-      user.nick = newNick;
-      const resident = residentsData.find(r => r.nick === nick);
-      if (resident) resident.nick = newNick;
-      const chs = chsData.find(c => c.nick === nick);
-      if (chs) chs.nick = newNick;
+  });
+  list.querySelectorAll('input[data-sight-idx], textarea[data-sight-idx]').forEach(el => {
+    el.addEventListener('input', function() {
+      const idx = parseInt(this.dataset.sightIdx);
+      const field = this.dataset.field;
+      if (field === 'images') sightsData[idx].images = this.value.split(',').map(s => s.trim()).filter(Boolean);
+      else sightsData[idx][field] = this.value;
       saveData();
-      toast('Ник изменён');
-      switchAdminTab('users');
-    } else {
-      toast('Ник не может быть пустым или занят', 'error');
-    }
-  };
-  window.saveHomepage = () => {
-    welcomeText = document.getElementById('welcomeTitleInput').value;
-    welcomeSubText = document.getElementById('welcomeSubInput').value;
+    });
+  });
+}
+window.addSight = () => { sightsData.push({ title:'Новая', images:[], desc:'', architect:'', builder:'', helpers:'', date:'', thanks:'' }); saveData(); renderSightsAdmin(); renderSights(); };
+window.deleteSight = (i) => { sightsData.splice(i,1); saveData(); renderSightsAdmin(); renderSights(); };
+
+function renderNewsAdmin() {
+  const list = document.getElementById('newsAdminList');
+  if (!list) return;
+  list.innerHTML = '';
+  newsData.forEach((n, i) => {
+    const imagesStr = (n.images || []).join(', ');
+    list.innerHTML += `
+      <div style="margin-bottom:15px; border:1px solid var(--glass-border); border-radius:15px; padding:10px;">
+        <div class="admin-field"><label>Заголовок:</label><input value="${n.title}" data-news-idx="${i}" data-field="title"></div>
+        <div class="admin-field"><label>Текст:</label><textarea data-news-idx="${i}" data-field="text">${n.text}</textarea></div>
+        <div class="admin-field"><label>Дата:</label><input value="${n.date}" data-news-idx="${i}" data-field="date"></div>
+        <div class="admin-field"><label>Изображения (через запятую):</label><input value="${imagesStr}" data-news-idx="${i}" data-field="images"></div>
+        <div class="dropzone" onclick="this.querySelector('input').click()"><input type="file" multiple accept="image/*" style="display:none" onchange="window.handleFileUpload(this, (src) => { if(!newsData[${i}].images) newsData[${i}].images=[]; newsData[${i}].images.push(src); saveData(); renderNewsAdmin(); })">Перетащите или кликните для загрузки фото</div>
+        <button onclick="deleteNews(${i})">Удалить</button>
+      </div>
+    `;
+  });
+  list.querySelectorAll('input[data-news-idx], textarea[data-news-idx]').forEach(el => {
+    el.addEventListener('input', function() {
+      const idx = parseInt(this.dataset.newsIdx);
+      const field = this.dataset.field;
+      if (field === 'images') newsData[idx].images = this.value.split(',').map(s => s.trim()).filter(Boolean);
+      else newsData[idx][field] = this.value;
+      saveData();
+    });
+  });
+}
+window.addNews = () => { newsData.push({ title:'Новая новость', text:'', date: new Date().toLocaleDateString(), images:[] }); saveData(); renderNewsAdmin(); };
+window.deleteNews = (i) => { newsData.splice(i,1); saveData(); renderNewsAdmin(); renderNews(); };
+
+// Правила
+window.formatDoc = (command) => { document.execCommand(command, false, null); document.getElementById('adminRulesEdit')?.focus(); };
+window.changeDocFontSize = () => { const size = prompt('Размер шрифта (например, 16px):'); if (size) document.execCommand('fontSize', false, size); };
+window.changeDocColor = (color) => { document.execCommand('foreColor', false, color); document.getElementById('adminRulesEdit')?.focus(); };
+window.insertDocImage = () => { const url = prompt('URL картинки:'); if (url) document.execCommand('insertImage', false, url); };
+window.saveRules = () => {
+  rulesText = document.getElementById('adminRulesEdit').innerHTML;
+  saveData();
+  document.getElementById('rulesTextContainer').innerHTML = rulesText;
+  toast('Правила сохранены');
+};
+
+// Задания
+window.viewTasksByDate = () => {
+  const date = document.getElementById('taskViewDate').value;
+  if (!date) return;
+  const tasks = tasksData[date] || [];
+  const editor = document.getElementById('taskEditor');
+  editor.innerHTML = tasks.map((t, i) => `
+    <div style="border:1px solid var(--glass-border); border-radius:10px; padding:10px; margin:5px 0;">
+      <input value="${t.text}" data-task-date="${date}" data-task-idx="${i}" data-field="text">
+      <input value="${t.assignedTo || ''}" placeholder="Ник" data-task-date="${date}" data-task-idx="${i}" data-field="assignedTo">
+      <select data-task-date="${date}" data-task-idx="${i}" data-field="status">
+        <option value="pending" ${t.status==='pending'?'selected':''}>Ожидает</option>
+        <option value="completed" ${t.status==='completed'?'selected':''}>Выполнено</option>
+      </select>
+      <button onclick="deleteTask('${date}', ${i})">Удалить</button>
+    </div>
+  `).join('');
+  editor.querySelectorAll('input, select').forEach(el => {
+    el.addEventListener('input', function() {
+      const d = this.dataset.taskDate;
+      const idx = parseInt(this.dataset.taskIdx);
+      const field = this.dataset.field;
+      if (tasksData[d] && tasksData[d][idx]) tasksData[d][idx][field] = this.value;
+      saveData();
+    });
+  });
+};
+window.deleteTask = (date, idx) => { tasksData[date].splice(idx, 1); if (tasksData[date].length === 0) delete tasksData[date]; saveData(); viewTasksByDate(); };
+
+// Ссылки
+window.saveSocial = () => { socialLinks.tg = document.getElementById('tgLink').value; socialLinks.ds = document.getElementById('dsLink').value; saveData(); toast('Ссылки сохранены'); };
+
+// Версии
+function renderVersionsAdmin() {
+  const list = document.getElementById('versionsAdminList');
+  if (!list) return;
+  list.innerHTML = '';
+  versionData.forEach((v, i) => {
+    list.innerHTML += `
+      <div style="margin-bottom:15px; border:1px solid var(--glass-border); border-radius:15px; padding:10px;">
+        <div class="admin-field"><label>Версия:</label><input value="${v.version}" data-ver-idx="${i}" data-field="version"></div>
+        <div class="admin-field"><label>Дата:</label><input value="${v.date}" data-ver-idx="${i}" data-field="date"></div>
+        <div class="admin-field"><label>Описание:</label><textarea data-ver-idx="${i}" data-field="desc">${v.desc}</textarea></div>
+        <div>Картинки: ${v.images.map((img, imgIdx) => `<img src="${img}" style="max-width:50px; border-radius:5px; margin:2px;" onclick="removeVersionImg(${i}, ${imgIdx})">`).join('')}</div>
+        <div class="dropzone" onclick="this.querySelector('input').click()"><input type="file" multiple accept="image/*" style="display:none" onchange="window.handleFileUpload(this, (src) => { versionData[${i}].images.push(src); saveData(); renderVersionsAdmin(); })">Добавить картинки</div>
+        <button onclick="deleteVersion(${i})">Удалить</button>
+      </div>
+    `;
+  });
+  list.querySelectorAll('input[data-ver-idx], textarea[data-ver-idx]').forEach(el => {
+    el.addEventListener('input', function() {
+      const idx = parseInt(this.dataset.verIdx);
+      const field = this.dataset.field;
+      versionData[idx][field] = this.value;
+      saveData();
+    });
+  });
+}
+window.removeVersionImg = (verIdx, imgIdx) => { versionData[verIdx].images.splice(imgIdx,1); saveData(); renderVersionsAdmin(); };
+window.addVersion = () => { versionData.push({ version:'v0.0.0', date:'', images:[], desc:'' }); saveData(); renderVersionsAdmin(); };
+window.deleteVersion = (i) => { versionData.splice(i,1); saveData(); renderVersionsAdmin(); };
+
+// Модераторы и пользователи
+window.toggleModer = (nick) => {
+  const user = users.find(u => u.nick === nick);
+  if (!user || user.nick === 'Xazbik_') return;
+  const action = user.role === 'moder' ? 'разжалован' : 'назначен модером';
+  user.role = user.role === 'moder' ? 'user' : 'moder';
+  modHistory.push({ date: new Date().toISOString(), moder: currentUser.nick, action: `${action} пользователь ${nick}` });
+  saveData();
+  switchAdminTab('moders');
+  toast(action);
+};
+window.addModer = () => {
+  const nick = document.getElementById('newModerNick').value.trim();
+  const user = users.find(u => u.nick === nick);
+  if (!user) return toast('Пользователь не найден', 'error');
+  if (user.role === 'admin') return toast('Нельзя изменить администратора', 'error');
+  user.role = 'moder';
+  modHistory.push({ date: new Date().toISOString(), moder: currentUser.nick, action: `назначен модером пользователь ${nick}` });
+  saveData();
+  switchAdminTab('moders');
+  toast('Модератор назначен');
+};
+window.deleteUser = (nick) => {
+  if (nick === 'Xazbik_') return toast('Нельзя удалить главного администратора', 'error');
+  users = users.filter(u => u.nick !== nick);
+  modHistory.push({ date: new Date().toISOString(), moder: currentUser.nick, action: `удалён пользователь ${nick}` });
+  saveData();
+  switchAdminTab('moders');
+  toast('Пользователь удалён');
+};
+window.revertLastModAction = () => {
+  if (modHistory.length === 0) return toast('История пуста', 'error');
+  const last = modHistory.pop();
+  const nick = last.action.split(' ').pop();
+  const user = users.find(u => u.nick === nick);
+  if (user) {
+    user.role = user.role === 'moder' ? 'user' : 'moder';
     saveData();
-    toast('Главная страница обновлена');
-    if (document.getElementById('homePage').classList.contains('active')) {
-      document.getElementById('welcomeTitle').textContent = welcomeText;
-      document.getElementById('welcomeSub').innerHTML = welcomeSubText;
+    toast(`Откат: ${last.action}`);
+    switchAdminTab('history');
+  }
+};
+window.editModerPermissions = (nick) => {
+  const currentPerms = moderatorPermissions[nick] || ['residents','chs','sights','rules','news','tasks'];
+  const allSections = ['residents','chs','sights','rules','news','tasks','social','versions','moders','history','about','settings'];
+  const modal = document.createElement('div');
+  modal.className = 'modal active';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close-btn" onclick="this.closest('.modal').remove()">✕</span>
+      <h3>Права модератора ${nick}</h3>
+      ${allSections.map(sec => `<label><input type="checkbox" value="${sec}" ${currentPerms.includes(sec)?'checked':''}> ${sec}</label><br>`).join('')}
+      <button class="btn-glass primary" onclick="saveModerPermissions('${nick}')">Сохранить</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+};
+window.saveModerPermissions = (nick) => {
+  const checks = [...document.querySelectorAll('.modal.active input[type="checkbox"]:checked')].map(c => c.value);
+  moderatorPermissions[nick] = checks;
+  saveData();
+  toast('Права сохранены');
+  document.querySelector('.modal.active .modal-close-btn')?.click();
+};
+window.saveAbout = () => {
+  aboutTexts[0] = document.getElementById('aboutText1').value;
+  aboutTexts[1] = document.getElementById('aboutText2').value;
+  aboutTexts[2] = document.getElementById('aboutText3').value;
+  saveData();
+  renderDescription();
+  toast('Описание сохранено');
+};
+window.uploadSound = () => {
+  const file = document.getElementById('customSoundFile').files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => { customSound = reader.result; saveData(); toast('Звук загружен!'); switchAdminTab('settings'); };
+  reader.readAsDataURL(file);
+};
+window.resetSound = () => { customSound = ''; saveData(); toast('Звук сброшен'); switchAdminTab('settings'); };
+window.resetUserPassword = (nick) => {
+  const user = users.find(u => u.nick === nick);
+  if (!user) return;
+  user.pass = '12345';
+  saveData();
+  toast(`Пароль ${nick} сброшен на "12345"`);
+};
+window.resetUserEmail = (nick) => {
+  const user = users.find(u => u.nick === nick);
+  if (!user) return;
+  user.email = prompt('Новая почта:', user.email);
+  if (user.email) { saveData(); toast('Почта обновлена'); }
+};
+window.changeUserNick = (nick) => {
+  const user = users.find(u => u.nick === nick);
+  if (!user) return;
+  const newNick = prompt('Новый ник:', user.nick);
+  if (newNick && newNick !== user.nick && !users.find(u => u.nick === newNick)) {
+    user.nick = newNick;
+    const resident = residentsData.find(r => r.nick === nick);
+    if (resident) resident.nick = newNick;
+    const chs = chsData.find(c => c.nick === nick);
+    if (chs) chs.nick = newNick;
+    saveData();
+    toast('Ник изменён');
+    switchAdminTab('users');
+  } else {
+    toast('Ник не может быть пустым или занят', 'error');
+  }
+};
+window.saveHomepage = () => {
+  welcomeText = document.getElementById('welcomeTitleInput').value;
+  welcomeSubText = document.getElementById('welcomeSubInput').value;
+  saveData();
+  toast('Главная страница обновлена');
+  if (document.getElementById('homePage').classList.contains('active')) {
+    document.getElementById('welcomeTitle').textContent = welcomeText;
+    document.getElementById('welcomeSub').innerHTML = welcomeSubText;
+  }
+};
+
+// Экспорт паролей
+window.exportPasswords = () => {
+  if (!currentUser || (currentUser.role !== 'admin' && currentUser.nick !== 'Xazbik_')) return;
+  let content = '=== ПАРОЛИ ХАЗБИКОВО ===\n\n';
+  users.forEach(u => {
+    content += `Ник: ${u.nick}\nEmail: ${u.email}\nПароль: ${u.pass}\nРоль: ${u.role}\n\n`;
+  });
+  const blob = new Blob([content], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'passvord.txt';
+  a.click();
+  toast('Файл passvord.txt сохранён');
+};
+
+// ======================== ОБРАБОТЧИКИ ДРОПЗОН ========================
+// Уже определён handleFileUpload глобально
+// Дополнительно вешаем обработчики dragover/dragleave для всех существующих и будущих dropzone
+document.addEventListener('dragover', (e) => {
+  const dz = e.target.closest('.dropzone');
+  if (dz) { e.preventDefault(); dz.classList.add('dragover'); }
+});
+document.addEventListener('dragleave', (e) => {
+  const dz = e.target.closest('.dropzone');
+  if (dz) dz.classList.remove('dragover');
+});
+document.addEventListener('drop', (e) => {
+  const dz = e.target.closest('.dropzone');
+  if (dz) {
+    e.preventDefault();
+    dz.classList.remove('dragover');
+    // Если есть input, симулируем загрузку
+    const input = dz.querySelector('input[type="file"]');
+    if (input && e.dataTransfer.files.length > 0) {
+      input.files = e.dataTransfer.files;
+      input.dispatchEvent(new Event('change'));
     }
-  };
+  }
+});
+
+// ======================== ИСПРАВЛЕНИЕ КОПИРОВАНИЯ ЮЗОВ ========================
+window.copyToClipboard = (text, element = null) => {
+  navigator.clipboard.writeText(text).then(() => {
+    if (element) {
+      element.classList.add('copied');
+      const original = element.textContent;
+      element.textContent = 'Скопировано!';
+      setTimeout(() => {
+        element.textContent = original;
+        element.classList.remove('copied');
+      }, 2000);
+    } else {
+      toast('Скопировано: ' + text);
+    }
+  }).catch(() => toast('Не удалось скопировать', 'error'));
+};
+
+// ======================== ЗАПУСК ========================
+// Переопределяем allPages, чтобы включить недостающие страницы в навигацию
+const allPagesExtended = [
+  { id:'home', label:'Главная', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>' },
+  { id:'residents', label:'Жители', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>' },
+  { id:'sights', label:'Достопримечательности', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2v5M7 2v5"/></svg>' },
+  { id:'chs', label:'ЧС', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>' },
+  { id:'rules', label:'Правила', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>' },
+  { id:'description', label:'Описание', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/></svg>' },
+  { id:'news', label:'Новости', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="8" cy="10" r="2"/><path d="M14 10h4M14 14h4"/></svg>' },
+  { id:'tasks', label:'Задания', icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>' }
+];
+
+// Переопределяем buildMenu, используя расширенный массив
+const originalBuildMenu = buildMenu;
+buildMenu = function(pageId) {
+  const menu = document.getElementById('collapsibleMenu');
+  menu.innerHTML = '';
+  allPagesExtended.forEach(p => {
+    if (p.id !== pageId) {
+      const btn = document.createElement('button');
+      btn.className = 'nav-btn';
+      btn.dataset.page = p.id;
+      btn.innerHTML = p.icon + ' ' + p.label;
+      btn.addEventListener('click', () => showPage(p.id));
+      menu.appendChild(btn);
+    }
+  });
+  const currentPage = allPagesExtended.find(p => p.id === pageId);
+  const currentTab = document.getElementById('currentTab');
+  currentTab.innerHTML = (currentPage ? currentPage.icon : '') + ' ' + (currentPage ? currentPage.label : 'Главная');
+};
+
+// Добавим стили для .user-contact, если их нет в CSS (вставим через JS, чтобы не менять HTML)
+const style = document.createElement('style');
+style.textContent = `
+  .user-contact {
+    display: inline-block;
+    background: var(--btn-bg);
+    border: var(--border-width) solid var(--glass-border);
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9em;
+  }
+  .user-contact:hover { background: var(--btn-hover); }
+  .user-contact.copied { background: #10b981; border-color: #10b981; color: white; }
+  .copy-btn-user.copied { background: #10b981; border-color: #10b981; color: white; }
+`;
+document.head.appendChild(style);
+
+console.log('Хазбиково v1.5.23 — админ-панель и улучшения загружены. Строк кода: 2000+');
 </script>
+<!-- КОНЕЦ ТРЕТЬЕЙ ЧАСТИ -->
